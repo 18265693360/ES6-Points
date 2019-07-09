@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // const 声明常量
+    // 但是声明的常量中也分 基本数据类型 引用数据雷类型
+    // 常量数据类型不能改变 引用数据类型可以改变其中的内容
+    // number string boolean undefined null
+    // 引用数据类型
+    // 第一类 原生对象object array date regexp  function
+    // 第二类 内置对象 Global Math
+    //       宿主对象 ie中的window
+
+    //错误
+    // const num = 34;
+    // num = 1;
+    // console.log(num);
+
+    const obj = {
+        //内存地址不变 obj变量存储的不是数据内容 而是堆区地址
+        name: "tom",
+        sex:"femal"
+    };
+
+    obj.sex = "male";
+    console.log(obj);
+
+
+    //let 可以改变基本数据类型
+    let boolean = false;
+    boolean = true;
+    console.log(boolean);
+
+    //var let变量作用域
+    // 作用域对比 var 变量的作用域==》函数的作用域 （function scoped）
+
+
+    //并不会起作用
+    // function demo() {
+    //     var i = 34;
+    // } 变量的有效作用域就是以函数为界
+    // demo();
+    // console.log(i);
+
+
+    //仅仅是代码块 并不涉及作用域 只有函数有作用域
+    // for (){
+    //
+    // }
+
+    if (true){
+        var i = 23;
+    }
+    console.log(i);
+
+    //let const 就不能因为他们是 不同于var的块级作用域
+    // （block scoped）  作用域对比 以{}为界 不需要函数
+    // if (true){
+    //     const d = 34;
+    // }
+    // console.log(d);
+
+
+    //var 变量隐式提升
+    // console.log(str);
+    // var str = "234";
+
+
+    // const let 在预编译也有隐式提升 但是提升的值放到了内存的暂时性
+    // 死区 不可以访问到 也相当于没有提升
+
+
+    //var 可以重复声明 下面覆盖上面的
+    // var str = 'we';
+    // var str = "wer";
+    // console.log(str);
+
+    //但是 let const 在他们的作用域下不可以重复性声明
+    let str = "我就饿两天环境";
+    if(true){
+        let str = "frewlkg";
+    }
+    console.log(str);
+
+
+</script>
+</html>
