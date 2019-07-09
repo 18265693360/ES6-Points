@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var obj1 = {
+        name:'first',
+        desc:'second'
+    }
+
+    var obj2 = {
+        color:'red',
+        hop:'go'
+    }
+
+    //对象1 拷贝到对象2
+    for (let key in obj1){
+        obj2[key] = obj1[key]
+    }
+    console.log(obj2);
+
+    // assign 拷贝用
+    Object.assign(obj2, obj1);
+    console.log(obj2);
+
+
+    // Object.keys() 返回对象中的属性名
+    console.log(Object.keys(obj2));
+
+    // Object.values()返回对象中的属性值
+    console.log(Object.values(obj1));
+
+    // Object.entries() 返回对象的键值对 属性名 属性值
+    console.log(Object.entries(obj2));
+</script>
+</html>

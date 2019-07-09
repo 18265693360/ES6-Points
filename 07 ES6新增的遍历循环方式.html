@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var arr = [2,3,4,5];
+    var arr1;
+
+    //map遍历数组 将item+2返回数组
+    // arr1 = arr.map(function (item, index, cArr) {
+    //     return item+2
+    // })
+
+    // console.log(arr1);
+
+    // function sum() {
+    //     arguments.map(item=>{
+    //         console.log(item);
+    //     })
+    // }
+    // sum(2,3,4);
+
+    //argument 类数组 无法使用map遍历
+    // function sum() {
+    //     arguments.map(item =>{
+    //         console.log(item);
+    //     })
+    // }
+    // sum(23,34,,34)
+
+    //for...of循环遍历
+    // for...in
+    function sum() {
+        // for (let key in arguments){
+             // key==> 数组的下标 对象属性名
+        // }
+        // for...of只是比for循环遍历数组的时候好用
+        //不能遍历对象
+        for (let value of arguments){//let当中的值就是数组当中的值
+            console.log(value);
+        }
+    }
+    sum(2,3,4,5,6,7);
+
+
+
+    // arguments 类数组对象
+    function avg() {
+        console.log(arguments);
+        //类数组对象没有数组上的方法 为了解决这个问题
+        //推进数组 然后用数组方法
+        var arr = [];
+        for (let value of arguments){
+            // console.log(value);
+            arr.push(value);
+        }
+        arr.map(item=>{
+            console.log(item);
+        })
+    }
+    avg(2,3,3,3);
+
+    //放进类数组对象arguments
+    function good() {
+        console.log(arguments);
+        var arr = Array.from(arguments);
+        // arr.from 可以将类数组对象转换数组对象
+        arr.map(item=>{
+            console.log(item);
+        })
+        // console.log(arr);
+    }
+    good(2,3,3,3,0)
+
+
+    //Array...of
+    //是为了解决参数不一致性问题
+    // var arry = new Array(8);//length=8 数组
+    var arry = new Array(8,1);// 数组[8,1]
+    console.log(arry);
+
+    //两个都是数组
+    // var arri = Array.of(8);//[8] length=1
+    var arri = Array.of(8,1);//[8,1] length=2
+    console.log(arri);
+
+
+</script>
+</html>

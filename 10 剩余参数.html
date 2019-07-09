@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //实现汇率转换
+
+    //普通写法
+    // function convert() {
+    //     //第一个参数 汇率
+    //     var rate = arguments[0];
+    //     var amount = [];
+    //     //类数组对相 不能用map 用for循环
+    //     //下面遍历 var i = 1 因为第一项是汇率
+    //     for (var i=1; i<arguments.length; i++){
+    //          amount.push(arguments[i])
+    //     }
+    //     return amount.map(item => item*rate);
+    // }
+    //
+    // console.log(convert(0.9, 100, 1000, 10000));
+
+    //Es6写法
+    //剩余参数 ...参数
+    // function convert(rate, ...amount) {
+    //     return amount.map(item=>rate*item);
+    // }
+    // console.log(convert(0.9, 100, 1000, 10000));
+
+
+
+
+</script>
+</html>

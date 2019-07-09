@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>我是内容0</li>
+    <li>我是内容0</li>
+    <li>我是内容0</li>
+    <li>我是内容0</li>
+</ul>
+</body>
+<script>
+
+    //（...）拓展运算符  是为了替代Array.from  和替代Object.assign
+
+    // var arr1 = [1,2,3];
+    // var arr2 = [2,36,6];
+    // var arr3;
+    //
+    // arr3 = arr1.concat(arr2);
+    // console.log(arr3);
+
+
+    //not a function    
+    // var lis = document.querySelectorAll('li');
+    //
+    // lis.map(function () {
+    //    
+    // })
+
+    // var lis = Array.from(document.querySelectorAll('li'))
+    //
+    // lis.map(function () {
+    //
+    // })
+
+    //可以用 ... 拓展运算符来代替 Array.from
+    var lis = [...document.querySelectorAll('li')];
+
+    // lis.map(function (item) {
+    //     console.log(item);
+    // })
+
+    lis.map(item =>{
+        console.log(item);
+    })
+
+
+    //拓展运算符 合并对象
+
+    //两个对象前面的键也不能一样
+    var goole = {
+        one: "天坛",
+        two: "长城"
+    }
+
+    var beijing = {
+        [0]:"前门",
+        [1]:"大栅栏",
+        //可以覆盖替换另一个对象中的键值
+        one:"紫禁城"
+    }
+
+    var travel = {
+        ...goole,
+        ...beijing
+    }
+    console.log(travel);
+
+
+</script>
+</html>

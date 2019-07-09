@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    const tom = {
+        name: "Tom Cat",
+        age: 18,
+        family:{
+            mother:"Ravlale",
+            father:"Ross",
+            brother:"ben"
+        }
+    }
+
+    //不解构的写法
+    // var name = tom.name;
+    // var age = tom.age;
+    // var family = tom.family;
+
+    // console.log(name);
+    // console.log(age);
+    // console.log(family);
+
+    //解构写法
+    // var {name, family,age} = tom;
+    // console.log(name);
+    // console.log(age);
+    // console.log(name, age, family);
+
+    //应用
+    // const router = express.Router();
+    // const {Router} = require(express);
+    // const router = Router();
+
+    //原始写法
+    // const Router = express.Router;
+    // const router = Router;
+    // const {Router} = require(express);
+
+
+    //数组的解构
+    // 与对象解构的语法相比，数组解构就简单多了，它使用的是数组字面量，且解构操作全部在数组内完成，而不是像对象字面量语法一样使用对象的命名属性：
+    let color = ["red","green","blue"];
+    let [firstColor, secondColor] = colors;
+    console.log(firstColor);
+    console.log(secondColor);
+
+//     在这段代码中，我们从colors数组中解构出了"red"和"green"这两个值，并分别存储在变量firstColor和变量secondColor中。在数组解构语法中，我们通过值在数组中的位置进行选取，且可以存储在任意变量中，未显式声明的元素都会直接被忽略。在这个过程中，数组本身不会发生任何变化。
+//
+//     在解构模式中，也可以直接省略元素，只为感兴趣的元素提供变量名。比如，如果你只想取数组中的第三个值，则不需要提供第一个和第二个元素的变量名称：
+    let colors = ["res", "green","blue"];
+    let [,,thirdColor] = color;
+    console.log(thirdColor);
+
+    // 数组解构也可用于赋值上下文，但不需要用小括号包裹表达式，这一点与对象解构的约定不同。
+    let colors = ["red","green","blue"],
+        firstColor = "black",
+        secondColor = "purple";
+    [firstColor, secondColor] = color;
+    console.log(firstColor);
+    console.log(secondColor);
+
+    // 数组解构还有一个独特的用例：交换两个变量的值。在ES5中交换两个变量的值需要引入第三个临时变量，但在ES6的数组解构中，就不再需要额外的变量了，如下：
+    let a = 1,
+        b = 2;
+    [a,b] = [b,a]
+    console.log(a);
+    console.log(b);
+</script>
+</html>

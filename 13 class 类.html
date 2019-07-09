@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+class 类 用来实现替代构造器函数
+</body>
+<script>
+    // function MakeIdCard(name) {
+    //     this.name = name;
+    // }
+    //
+    // MakeIdCard.prototype.nation = "China";
+
+
+    // call（）方法和apply（）方法的作用相同：改变this指向。
+    // call（）：第一个参数是this值没有变化，
+    // 变化的是其余参数都直接传递给函数。在使用call（）方法时，
+    // 传递给函数的参数必须逐个列举出来
+    // apply（）：传递给函数的是参数数组
+
+    //继承上面的构造器函数属性 实现继承
+    // function MakePerson(job,name) {
+    //     MakeIdCard.call(this,name);
+    //     // console.log(this);
+    //     this.job = job;
+    // }
+    //
+    // function F() {
+    //
+    // }
+    // //实现继承
+    // F.prototype = MakeIdCard.prototype;
+    // var obj = new F();
+    // MakePerson.prototype = obj;
+    // //constructor 的属性会乱 要重新定义回来
+    // MakePerson.prototype.constructor = MakePerson;
+    // console.log(obj);
+    //
+    // var person1 = new MakeIdCard('前端工程师',"jj")
+    // console.log(person1);
+
+
+    //Es6实现继承
+    class MakeIdCard{
+        constructor(name){
+            this.name = name;
+        }
+    }
+
+    MakeIdCard.prototype.nation = "China";
+    console.log(new MakeIdCard('yy'));
+
+    //继承
+    //    MakePerson  从    MakeIDCard 继承
+    class MakePerson extends  MakeIdCard{
+        //上面有继承 extend 下面要有super()方法 否则报错
+        constructor (job,name){
+              super(name);//走了一遍构造器函数
+            this.job = job;
+        }
+    }
+
+    var bb = new MakePerson('杀手','bb');
+    console.log(bb);
+
+
+</script>
+</html>
